@@ -6,10 +6,11 @@ import HomeScreen from '../screens/HomeScreen';
 import ResultScreen from '../screens/ResultScreen';
 import CameraScreen from '../screens/CameraScreen';
 
+// RootStackParamList: Hangi sayfa hangi parametreleri alacak?
 export type RootStackParamList = {
   Home: undefined;
-  Result: undefined;
   Camera: undefined;
+  Result: { photoUri: string; prediction: string };  // 🚀 ResultScreen artık veri alıyor
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -19,8 +20,8 @@ export default function AppNavigator() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Result" component={ResultScreen} />
         <Stack.Screen name="Camera" component={CameraScreen} />
+        <Stack.Screen name="Result" component={ResultScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -10,7 +10,14 @@ export default function HomeScreen({ navigation }: Props) {
     <View style={styles.container}>
       <Text style={styles.text}>Intelligent Dermatologic {'\n'} Diseases Diagnosis App</Text>
       <View style={{ marginBottom: 30 }} /> {/* Boşluk ekleniyor */}
-      <Button title="Sonuç ekranına git" onPress={() => navigation.navigate('Result')} />
+      <Button 
+  title="Sonuç ekranına git" 
+  onPress={() => navigation.navigate('Result', { 
+    photoUri: 'test-uri', 
+    prediction: 'test-prediction' 
+  })} 
+/>
+
       <View style={{ marginBottom: 10 }} /> {/* Boşluk ekleniyor */}
       <Button title="Kamera Ekranına Git" onPress={() => navigation.navigate('Camera')} />
     </View>

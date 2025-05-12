@@ -10,8 +10,17 @@ import CameraScreen from '../screens/CameraScreen';
 export type RootStackParamList = {
   Home: undefined;
   Camera: undefined;
-  Result: { photoUri: string; prediction: string };  // 🚀 ResultScreen artık veri alıyor
+  Result: { 
+    photoUri: string; 
+    prediction: string; 
+    confidence: number;
+    name: string;
+    symptoms: string[];
+    precautions: string[];
+    note: string;
+  };
 };
+
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 

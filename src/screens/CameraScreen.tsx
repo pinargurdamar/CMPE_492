@@ -113,12 +113,12 @@ export default function CameraScreen() {
 
   return (
     <View style={styles.container}>
-      <Button title="Kamerayı Aç" onPress={openCamera} />
-      <Button title="Galeriden Seç" onPress={openGallery} />
+      <Button title="Open Camera" onPress={openCamera} />
+      <Button title="Open Gallery" onPress={openGallery} />
       {photo && (
         <>
           <Image source={{ uri: photo.uri }} style={styles.image} resizeMode="contain" />
-          <Button title="Fotoğrafı Gönder" onPress={sendPhotoToBackend} />
+          <Button title="Upload Photo" onPress={sendPhotoToBackend} />
         </>
       )}
       {loading && <ActivityIndicator size="large" color="#0000ff" style={styles.loading} />}

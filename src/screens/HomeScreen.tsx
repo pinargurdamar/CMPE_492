@@ -13,18 +13,18 @@ export default function HomeScreen({ navigation }: Props) {
       </Text>
 
       <Text style={styles.info}>
-        Bu uygulama şu anda yalnızca aşağıdaki dört cilt hastalığını teşhis edebilmektedir:
+        This application is currently capable of diagnosing only the following four skin conditions:
       </Text>
 
-      <Text style={styles.disease}>• Nevus (Ben)</Text>
-      <Text style={styles.disease}>• Melanoma (Cilt Kanseri)</Text>
+      <Text style={styles.disease}>• Nevus </Text>
+      <Text style={styles.disease}>• Melanoma </Text>
       <Text style={styles.disease}>• Basal Cell Carcinoma</Text>
       <Text style={styles.disease}>• Benign Keratosis-like Lesions</Text>
 
       <View style={{ marginBottom: 30 }} />
 
       <Button 
-        title="Kamera Ekranına Git" 
+        title="Camera Screen" 
         onPress={() => navigation.navigate('Camera')} 
       />
     </View>

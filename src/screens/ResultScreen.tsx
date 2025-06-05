@@ -19,26 +19,27 @@ export default function ResultScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.title}>Tahmin Sonucu</Text>
+      <Text style={styles.title}>Prediction Result</Text>
       <Image
         source={{ uri: photoUri }}
         style={styles.image}
         resizeMode="contain"
       />
       <Text style={styles.infoText}>
-        Dermatologic Diseases Diagnosis App hata yapabilir.{'\n'} Lütfen doktorunuza danışın.
+        This app may not always provide accurate results.{'\n'} 
+        Please consult a healthcare professional for a proper diagnosis.
       </Text>
 
       <View style={styles.section}>
         <Text style={styles.resultText}>{name || prediction}</Text>
         {confidence !== undefined && (
-          <Text style={styles.confidenceText}>Güven Skoru: %{confidence}</Text>
+          <Text style={styles.confidenceText}>Confidence Score: %{confidence}</Text>
         )}
       </View>
 
       {symptoms && (
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Belirtiler:</Text>
+          <Text style={styles.sectionTitle}>Symptoms:</Text>
           {symptoms.map((item: string, index: number) => (
             <Text key={index} style={styles.bulletText}>• {item}</Text>
           ))}
@@ -47,7 +48,7 @@ export default function ResultScreen() {
 
       {precautions && (
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Önlemler:</Text>
+          <Text style={styles.sectionTitle}>Precautions:</Text>
           {precautions.map((item: string, index: number) => (
             <Text key={index} style={styles.bulletText}>• {item}</Text>
           ))}
@@ -56,7 +57,7 @@ export default function ResultScreen() {
 
       {note && (
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Not:</Text>
+          <Text style={styles.sectionTitle}>Note:</Text>
           <Text style={styles.noteText}>{note}</Text>
         </View>
       )}

@@ -50,10 +50,10 @@ def predict(image_path):
             predicted_label = class_names[top2_idx]
             final_confidence = top2_confidence
         else:
-            predicted_label = "Emin değilim"
+            predicted_label = "The application cold not diagnose your condition"
             final_confidence = top1_confidence
 
-        print(f"✅ Tahmin: {predicted_label}, Güven: %{final_confidence * 100:.2f}")
+        print(f"✅ Tahmin: {predicted_label}, Confidence: %{final_confidence * 100:.2f}")
         return predicted_label, final_confidence
 
     except Exception as e:

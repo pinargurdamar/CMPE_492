@@ -26,7 +26,7 @@ export default function ResultScreen() {
         resizeMode="contain"
       />
       <Text style={styles.infoText}>
-        This app may not always provide accurate results.{'\n'} 
+        ⚠️ This app may not always provide accurate results.{'\n'} 
         Please consult a healthcare professional for a proper diagnosis.
       </Text>
 

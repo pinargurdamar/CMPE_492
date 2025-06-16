@@ -8,6 +8,7 @@ import {
   PermissionsAndroid,
   Platform,
   ActivityIndicator,
+  Text,
 } from 'react-native';
 import { launchCamera, launchImageLibrary, Asset } from 'react-native-image-picker';
 import { useNavigation } from '@react-navigation/native';
@@ -121,8 +122,17 @@ export default function CameraScreen() {
           <Button title="Upload Photo" onPress={sendPhotoToBackend} />
         </>
       )}
-      {loading && <ActivityIndicator size="large" color="#0000ff" style={styles.loading} />}
-    </View>
+      {loading && (
+        <View style={styles.loaderOverlay}>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      )}
+      <View style={styles.footerNotice}>
+        <Text style={styles.footerText}>
+          ⚠️ Yüklenen görseller hiçbir yerde depolanmaz. {'\n'} Tahmin işleminden sonra otomatik olarak silinir.
+        </Text>
+      </View>
+   </View>
   );
 }
 
@@ -130,4 +140,44 @@ const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: 20 },
   image: { width: 300, height: 300, marginTop: 20 },
   loading: { marginTop: 20 },
+  noticeBox: {
+    marginTop: 30,
+    paddingHorizontal: 20,
+  },
+  noticeText: {
+    fontSize: 14,
+    color: '#555',
+    textAlign: 'center',
+  },
+  footerNotice: {
+    position: 'absolute',
+    top: 20,
+    left: 20,
+    right: 20,
+    padding: 10,
+    backgroundColor: '#f9f9f9',
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 3,
+  },
+  footerText: {
+    fontSize: 13,
+    color: '#444',
+    textAlign: 'center',
+  },
+  loaderOverlay: {
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  backgroundColor: 'rgba(255, 255, 255, 0.7)',
+  justifyContent: 'center',
+  alignItems: 'center',
+  zIndex: 10,
+}
+
 });

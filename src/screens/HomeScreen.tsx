@@ -9,14 +9,14 @@ export default function HomeScreen({ navigation }: Props) {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../assets/logo2.jpg')}
+        source={require('../assets/logo2_converted.png')}
         style={styles.logo}
       />
-
+{/*
       <Text style={styles.title}>
         Intelligent Dermatologic{'\n'}Diseases Diagnosis App
       </Text>
-
+*/}
       <Text style={styles.info}>
         This application is currently capable of diagnosing only the following four skin conditions:
       </Text>
@@ -38,7 +38,8 @@ export default function HomeScreen({ navigation }: Props) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 },
-  logo: { width: 150, height: 150, marginBottom: 20, resizeMode: 'contain' },
+  logo: { width: 250, height: 250, marginBottom: 50, resizeMode: 'contain', borderWidth: 2, 
+          borderColor: '#ccc', borderRadius: 12, elevation: 6},
   title: { fontSize: 20, fontWeight: 'bold', marginBottom: 10, textAlign: 'center' },
   info: { fontSize: 14, color: '#555', textAlign: 'center', marginBottom: 10 },
   disease: { fontSize: 14, color: '#222', marginTop: 2 }
